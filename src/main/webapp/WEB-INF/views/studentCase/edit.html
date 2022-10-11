@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update student</title>
+  <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/studentCase/{id}(id=${studentData.getId()})}" th:object="${studentData}">
+  <br/>
+  <label for="studentID">Enter student ID: </label>
+  <input type="number" th:field="*{studentID}" id="studentID"/>
+  <div style="color: red" th:if="${#fields.hasErrors('studentID')}" th:errors="*{studentID}">Age error</div>
+  <br/>
+  <label for="studentName">Enter name of student:    </label>
+  <input type="text" th:field="*{studentName}" id="studentName"/>
+  <div style="color: red" th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}">Name error</div>
+  <br/>
+  <label for="studentLastname">Enter lastname of student: </label>
+  <input type="text" th:field="*{studentLastname}" id="studentLastname"/>
+  <div style="color: red" th:if="${#fields.hasErrors('studentLastname')}" th:errors="*{studentLastname}">Lastname error</div>
+  <br/>
+  <label for="studentEmail">Enter email of student: </label>
+  <input type="text" th:field="*{studentEmail}" id="studentEmail"/>
+  <div style="color: red" th:if="${#fields.hasErrors('studentEmail')}" th:errors="*{studentEmail}">email error</div>
+  <br/>
+  <label for="universityName">Enter University Name: </label>
+  <input type="text" th:field="*{universityName}" id="universityName"/>
+  <div style="color: red" th:if="${#fields.hasErrors('universityName')}" th:errors="*{universityName}">University name error</div>
+  <br/>
+  <label for="facultyName">Enter Faculty Name: </label>
+  <input type="text" th:field="*{facultyName}" id="facultyName"/>
+  <div style="color: red" th:if="${#fields.hasErrors('facultyName')}" th:errors="*{facultyName}">Faculty name error</div>
+  <br/>
+  <label for="studentGPA">Enter student GPA: </label>
+  <input type="number" th:field="*{studentGPA}" id="studentGPA"/>
+  <div style="color: red" th:if="${#fields.hasErrors('studentGPA')}" th:errors="*{studentGPA}">Student GPA error</div>
+  <br/>
+  <label for="graduatedYear">Enter student year of graduation: </label>
+  <input type="number" th:field="*{graduatedYear}" id="graduatedYear"/>
+  <div style="color: red" th:if="${#fields.hasErrors('graduatedYear')}" th:errors="*{graduatedYear}">Student GPA error</div>
+  <br/>
+  <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>
+

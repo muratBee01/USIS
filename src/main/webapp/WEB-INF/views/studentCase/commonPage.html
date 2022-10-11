@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>All people</title>
+    <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
+</head>
+<body>
+
+<a href="/studentCase/new">Create new student</a>
+<br/>
+<hr/>
+<div th:each="studentVariable : ${studentCase}">
+    <a th:href="@{/studentCase/{id}(id=${studentVariable.getId()})}"
+       th:text="${studentVariable.getStudentID()}+' '+ ${studentVariable.getStudentName()}+' '+${studentVariable.getStudentLastname()}+' '+${studentVariable.getStudentEmail()}+' '+${studentVariable.getUniversityName()}+' '+${studentVariable.getFacultyName()}+' '+${studentVariable.getStudentGPA()}+' '+${studentVariable.getGraduatedYear()}">student</a>
+    </div>
+
+</body>
+</html>

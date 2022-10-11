@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Student</title>
+    <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
+</head>
+<body>
+<p th:text="'ID: ' + ${studentData.getId()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getStudentID()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getStudentName()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getStudentLastname()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getStudentEmail()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getUniversityName()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getFacultyName()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getStudentGPA()}">VALUE</p>
+<p th:text="'ID: ' + ${studentData.getGraduatedYear()}">VALUE</p>
+
+
+<a th:href="@{/studentCase/{id}/edit(id=${studentData.getId()})}">Edit</a>
+<form th:method="DELETE" th:action="@{/studentCase/{id}(id=${studentData.getId()})}">
+    <input type="submit" th:value="Delete"/>
+</form>
+
+</body>
+</html>
